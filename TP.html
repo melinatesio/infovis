@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salud en Cifras: Mi Historial Clínico Bajo la Lupa</title>
+    <!-- Fuente Google Montserrat para aspecto moderno -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Paleta Oficial */
+            --color-primary: #278976;     /* Títulos y Encabezados */
+            --color-secondary: #42E2C6;   /* Subtítulos e Indicadores */
+            --color-accent-pink: #C774BB; /* Indicadores / Tendencias */
+            --color-accent-orange: #FFA24D;/* Indicadores / Tendencias */
+            --color-accent-green: #D9E67E; /* Indicadores / Tendencias */
+            
+            /* Fondos estilo UI Dashboard */
+            --bg-body: #F4F7F6;
+            --bg-card: #FFFFFF;
+            --text-dark: #2C3E50;
+            --text-muted: #6C7A89;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* HEADER / HERO SECTION */
+        header {
+            background: linear-gradient(135deg, var(--color-primary), #1b5b4f);
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(39, 137, 118, 0.15);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p.intro {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 800px;
+        }
+
+        /* METRIC CARDS (KPIs) */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .kpi-card {
+            background: var(--bg-card);
+            padding: 20px;
+            border-radius: 16px;
+            border-left: 6px solid var(--color-secondary);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .kpi-card:nth-child(2) { border-left-color: var(--color-accent-pink); }
+        .kpi-card:nth-child(3) { border-left-color: var(--color-accent-orange); }
+        .kpi-card:nth-child(4) { border-left-color: var(--color-accent-green); }
+
+        .kpi-card h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+
+        .kpi-card .number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        /* SECCIONES DE VISUALIZACIÓN */
+        .viz-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 35px;
+        }
+
+        .viz-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+            border: 1px solid #EAECEE;
+        }
+
+        .viz-header {
+            margin-bottom: 20px;
+            border-bottom: 2px solid #F0F3F4;
+            padding-bottom: 15px;
+        }
+
+        .viz-header h2 {
+            color: var(--color-primary);
+            font-size: 1.35rem;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .viz-header p.subtitle {
+            color: var(--color-secondary);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .viz-description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* CONTENEDOR DE GRÁFICOS (EMBEDS) */
+        .chart-container {
+            width: 100%;
+            min-height: 450px;
+            background-color: #FAFDFC;
+            border: 2px dashed #D5D8DC;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Ajustes para iframes de Flourish / Datawrapper */
+        .chart-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            min-height: 450px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- HEADER / INTRODUCCIÓN NARRATIVA -->
+        <header>
+            <h1>Salud en Cifras: Mi Historial Clínico Bajo la Lupa</h1>
+            <p class="intro">
+                Una exploración visual de mis registros médicos (2021-2026). Este proyecto analiza la transición y el equilibrio entre el mantenimiento preventivo de la salud y las respuestas reactivas ante urgencias y tratamientos.
+            </p>
+        </header>
+
+        <!-- TARJETAS DE MÉTRICAS RÁPIDAS (KPIs) -->
+        <section class="kpi-grid">
+            <div class="kpi-card">
+                <h3>Período Analizado</h3>
+                <div class="number">2021 - 2026</div>
+            </div>
+            <div class="kpi-card">
+                <h3>Enfoque Principal</h3>
+                <div class="number" style="color: var(--color-accent-pink);">Prevención</div>
+            </div>
+            <div class="kpi-card">
+                <h3>Herramientas Usadas</h3>
+                <div class="number" style="color: var(--color-accent-orange);">4 Plataformas</div>
+            </div>
+            <div class="kpi-card">
+                <h3>Tipos de Atención</h3>
+                <div class="number" style="color: #889900;">Ambulatorio / Internación</div>
+            </div>
+        </section>
+
+        <!-- MUESTRA DE LAS 4 VISUALIZACIONES -->
+        <main class="viz-grid">
+
+            <!-- GRÁFICO 1: FLOURISH -->
+            <article class="viz-card">
+                <header class="viz-header">
+                    <h2>1. ¿Cómo evolucionó la frecuencia de mis consumos médicos año a año entre 2021 y 2026?</h2>
+                    <p class="subtitle">Herramienta: Flourish</p>
+                </header>
+                <p class="viz-description">
+                    Tendencia general de los eventos de salud registrados a lo largo del tiempo para observar períodos de estabilidad vs. picos de atención.
+                </p>
+                <div class="chart-container">
+                    <!-- PEGA AQUÍ EL CÓDIGO EMBED / IFRAME DE FLOURISH -->
+                    <span style="color: var(--text-muted);">[ Pega aquí el código Embed de Flourish ]</span>
+                </div>
+            </article>
+
+            <!-- GRÁFICO 2: DATAWRAPPER -->
+            <article class="viz-card">
+                <header class="viz-header">
+                    <h2>2. ¿Qué proporción de mi atención médica responde a chequeos preventivos frente a situaciones de urgencia?</h2>
+                    <p class="subtitle">Herramienta: DataWrapper</p>
+                </header>
+                <p class="viz-description">
+                    Comparación entre atenciones programadas de rutina (prevención) vs. guardias, medicamentos e intervenciones (reacción).
+                </p>
+                <div class="chart-container">
+                    <!-- PEGA AQUÍ EL CÓDIGO EMBED / IFRAME DE DATAWRAPPER -->
+                    <span style="color: var(--text-muted);">[ Pega aquí el código Embed de Datawrapper ]</span>
+                </div>
+            </article>
+
+            <!-- GRÁFICO 3: RAWGRAPHS -->
+            <article class="viz-card">
+                <header class="viz-header">
+                    <h2>3. ¿Cuáles son los rubros y subrubros de salud en los que concentro la mayor cantidad de prácticas?</h2>
+                    <p class="subtitle">Herramienta: RAWGraphs</p>
+                </header>
+                <p class="viz-description">
+                    Desglose jerárquico de las áreas médicas más frecuentadas (Laboratorio, Odontología, Imagenología, etc.).
+                </p>
+                <div class="chart-container">
+                    <!-- PEGA AQUÍ TU IMAGEN SVG/PNG O CÓDIGO DE RAWGRAPHS -->
+                    <span style="color: var(--text-muted);">[ Pega aquí tu gráfico exportado de RAWGraphs (SVG/Image/HTML) ]</span>
+                </div>
+            </article>
+
+            <!-- GRÁFICO 4: TABLEAU / POWER BI -->
+            <article class="viz-card">
+                <header class="viz-header">
+                    <h2>4. ¿Existen meses del año donde tiendo a concentrar mis consultas y controles médicos?</h2>
+                    <p class="subtitle">Herramienta: Tableau / PowerBI</p>
+                </header>
+                <p class="viz-description">
+                    Mapa de calor o matriz de estacionalidad para identificar patrones o "meses de chequeo" fijos a lo largo del año.
+                </p>
+                <div class="chart-container">
+                    <!-- PEGA AQUÍ EL CÓDIGO IFRAME DE TABLEAU PUBLIC O POWER BI -->
+                    <span style="color: var(--text-muted);">[ Pega aquí el Embed Code de Tableau Public o PowerBI ]</span>
+                </div>
+            </article>
+
+        </main>
+
+        <footer>
+            <p>Trabajo Práctico Individual — Certificación en Data Science | Prototipo GitHub Pages</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
