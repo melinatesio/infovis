@@ -113,23 +113,25 @@
 
         .viz-header {
             margin-bottom: 20px;
-            border-bottom: 2px solid #F0F3F4;
-            padding-bottom: 15px;
+            background-color: var(--color-primary);
+            padding: 20px;
+            border-radius: 12px;
         }
 
         .viz-header h2 {
-            color: var(--color-primary);
+            color: #FFFFFF; /* Título 1 en texto blanco */
             font-size: 1.35rem;
-            margin-bottom: 6px;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
 
         .viz-header p.subtitle {
-            color: #FFFFFF; /* Cambiado a blanco para máxima legibilidad */
-            background-color: var(--color-primary);
+            color: var(--color-primary); /* Texto verde oscuro */
+            background-color: var(--color-secondary); /* Fondo aqua (#42E2C6) */
             display: inline-block;
-            padding: 4px 12px;
+            padding: 6px 14px;
             border-radius: 6px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.85rem;
         }
 
@@ -137,6 +139,7 @@
             color: var(--text-muted);
             font-size: 0.95rem;
             margin-bottom: 20px;
+            margin-top: 15px;
         }
 
         /* CONTENEDOR DE GRÁFICOS (EMBEDS) */
@@ -146,18 +149,8 @@
             background-color: #FAFDFC;
             border: 2px dashed #D5D8DC;
             border-radius: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
+            padding: 15px;
             position: relative;
-        }
-
-        .chart-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            min-height: 450px;
         }
 
         footer {
@@ -205,11 +198,15 @@
                     <p class="subtitle">Herramienta: RAWGraphs</p>
                 </header>
                 <p class="viz-description">
-                    Tendencia general de los eventos de salud registrados a lo largo del tiempo para observar períodos de estabilidad vs. picos de atención.
+                    Tendencia general de los eventos de salud registrados a lo largo del tiempo.
                 </p>
                 <div class="chart-container">
-                    <!-- PEGA AQUÍ TU CÓDIGO EMBED / SVG DE RAWGRAPHS -->
-                    <span style="color: var(--text-muted);">[ Pega aquí el gráfico de RAWGraphs ]</span>
+                    <div class="flourish-embed flourish-chart" data-src="visualisation/30082509">
+                        <script src="https://public.flourish.studio/resources/embed.js"></script>
+                        <noscript>
+                            <img src="https://public.flourish.studio/visualisation/30082509/thumbnail" width="100%" alt="chart visualization" />
+                        </noscript>
+                    </div>
                 </div>
             </article>
         </main>
@@ -222,5 +219,4 @@
 
 </body>
 </html>
-</body>
-</html>
+
