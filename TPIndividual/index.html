@@ -119,26 +119,26 @@
         }
 
         .viz-header h2 {
-            color: #FFFFFF; 
+            color: #FFFFFF;
             font-size: 1.35rem;
             margin-bottom: 10px;
             font-weight: 700;
         }
 
         .viz-header p.subtitle {
-            color: var(--color-secondary);
+            color: var(--color-primary);
+            background-color: var(--color-secondary);
             display: inline-block;
             padding: 6px 14px;
             border-radius: 6px;
             font-weight: 700;
             font-size: 0.85rem;
         }
-        
+
         .viz-description {
             color: var(--text-muted);
             font-size: 0.95rem;
             margin-bottom: 20px;
-        }
         }
 
         /* CONTENEDOR DE GRÁFICOS (EMBEDS) */
@@ -189,10 +189,28 @@
             </div>
         </section>
 
+        <!-- RECUADROS DE VISUALIZACIÓN -->
         <main class="viz-grid">
+
+            <!-- NUEVO GRÁFICO 1 -->
             <article class="viz-card">
                 <header class="viz-header">
-                    <h2>1. ¿Cómo evolucionó la frecuencia de mis consumos médicos año a año entre 2021 y 2026?</h2>
+                    <h2>1. ¿Cómo se distribuyen mis consumos entre Reactivos y Preventivos?</h2>
+                    <p class="subtitle">Herramienta: DataWrapper</p>
+                </header>
+                <p class="viz-description">
+                    Proporción general de las atenciones médicas orientadas a la medicina preventiva vs. las respuestas ante situaciones reactivas o de urgencia.
+                </p>
+                <div class="chart-container">
+                    <!-- PEGA AQUÍ TU EMBED DE DATAWRAPPER -->
+                    <span style="color: var(--text-muted);">[ Pega aquí el código Embed de Datawrapper ]</span>
+                </div>
+            </article>
+
+            <!-- GRÁFICO 2 (ANTES GRÁFICO 1) -->
+            <article class="viz-card">
+                <header class="viz-header">
+                    <h2>2. ¿Cómo evolucionó la frecuencia de mis consumos médicos año a año entre 2021 y 2026?</h2>
                     <p class="subtitle">Herramienta: Flourish</p>
                 </header>
                 <p class="viz-description">
@@ -207,6 +225,7 @@
                     </div>
                 </div>
             </article>
+
         </main>
 
         <footer>
@@ -217,4 +236,3 @@
 
 </body>
 </html>
-
