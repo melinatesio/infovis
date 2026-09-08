@@ -142,20 +142,24 @@
             margin-bottom: 20px;
         }
 
-        /* CONTENEDORES ADAPTATIVOS PARA QUE NO SE CORTEN LOS GRÁFICOS */
+        /* CONTENEDOR ESTÁNDAR */
         .chart-container {
             width: 100%;
-            min-height: 450px;
             background-color: #FAFDFC;
             border: 2px dashed #D5D8DC;
             border-radius: 12px;
             padding: 15px;
-            position: relative;
             display: block;
-            overflow: visible;
         }
 
-        /* Centrado flexible del SVG de RAWGraphs */
+        /* Centrado específico para el gráfico RAWGraphs (SVG) */
+        .chart-container-centered {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 450px;
+        }
+
         .chart-container object {
             display: block;
             margin: 0 auto;
@@ -165,16 +169,16 @@
             min-height: 450px;
         }
 
-        /* Permitir que Datawrapper y Flourish ajusten su alto de forma libre */
+        /* Adaptabilidad para iFrames de Datawrapper */
         .chart-container iframe {
             width: 100% !important;
             border: none;
         }
 
-        .chart-container .flourish-embed {
+        /* Regla para garantizar que Flourish no se restrinja */
+        .flourish-embed {
             width: 100% !important;
-            height: auto !important;
-            min-height: 500px;
+            display: block !important;
         }
 
         footer {
@@ -198,7 +202,7 @@
             </p>
         </header>
 
-        <!-- TARJETAS DE MÉTRICAS (KPIs) - 4 TARJETAS -->
+        <!-- TARJETAS DE MÉTRICAS (KPIs) -->
         <section class="kpi-grid">
             <div class="kpi-card">
                 <h3>Periodos Analizados</h3>
@@ -221,7 +225,7 @@
         <!-- RECUADROS DE VISUALIZACIÓN -->
         <main class="viz-grid">
 
-            <!-- PREGUNTA 1: RAWGRAPHS SVG EMBED (CENTERED) -->
+            <!-- PREGUNTA 1: RAWGRAPHS SVG EMBED -->
             <article class="viz-card">
                 <header class="viz-header">
                     <h2>1. ¿Cómo se distribuye mi consumo médico según el origen de la atención?</h2>
@@ -230,7 +234,7 @@
                 <p class="viz-description">
                     Distribución de las atenciones médicas divididas por su origen (Ambulatorio vs. Internación) para identificar el volumen de consultas de rutina frente a estadías de mayor complejidad.
                 </p>
-                <div class="chart-container" style="display: flex; justify-content: center; align-items: center;">
+                <div class="chart-container chart-container-centered">
                     <object type="image/svg+xml" data="./ConsumoOrigen.svg"></object>
                 </div>
             </article>
@@ -246,7 +250,7 @@
                 </p>
                 <div class="chart-container">
                     <iframe title="Consumos por Rubro" aria-label="Columnas apiladas" id="datawrapper-chart-WFYi7" src="https://datawrapper.dwcdn.net/WFYi7/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="467" data-external="1"></iframe>
-                    <script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
+                    <script type="text/javascript">(function(){function e(){window.addEventListener('message',function(e){if(e.data['datawrapper-height']!==void 0){var t=document.querySelectorAll('iframe');for(var n in e.data['datawrapper-height'])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data['datawrapper-height'][n]+'px';i.style.height=a}}})}e()})();</script>
                 </div>
             </article>
 
