@@ -151,6 +151,15 @@
             border-radius: 12px;
             padding: 15px;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chart-container object {
+            width: 100%;
+            height: 100%;
+            min-height: 450px;
         }
 
         footer {
@@ -197,25 +206,39 @@
         <!-- RECUADROS DE VISUALIZACIÓN -->
         <main class="viz-grid">
 
-            <!-- GRÁFICO 1: CONSUMO SEGÚN ORIGEN (DATAWRAPPER) -->
+            <!-- PREGUNTA 1: RAWGRAPHS SVG EMBED -->
             <article class="viz-card">
                 <header class="viz-header">
                     <h2>1. ¿Cómo se distribuye mi consumo médico según el origen de la atención?</h2>
-                    <p class="subtitle">Herramienta: DataWrapper</p>
+                    <p class="subtitle">Herramienta: RAWGraphs</p>
                 </header>
                 <p class="viz-description">
                     Distribución de las atenciones médicas divididas por su origen (Ambulatorio vs. Internación) para identificar el volumen de consultas de rutina frente a estadías de mayor complejidad.
                 </p>
                 <div class="chart-container">
-                    <iframe title="Consumos por Origen" aria-label="Area Chart" id="datawrapper-chart-sVoYz" src="https://datawrapper.dwcdn.net/sVoYz/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="418" data-external="1"></iframe>
+                    <object type="image/svg+xml" data="./ConsumoOrigen.svg"></object>
+                </div>
+            </article>
+
+            <!-- PREGUNTA 2: EVOLUCIÓN DE LA FRECUENCIA (DATAWRAPPER) -->
+            <article class="viz-card">
+                <header class="viz-header">
+                    <h2>2. ¿Cómo evolucionó la frecuencia de mis consumos médicos año a año entre 2021 y 2026?</h2>
+                    <p class="subtitle">Herramienta: DataWrapper</p>
+                </header>
+                <p class="viz-description">
+                    Tendencia general de los eventos de salud registrados a lo largo del tiempo.
+                </p>
+                <div class="chart-container">
+                    <iframe title="Consumos por Rubro" aria-label="Columnas apiladas" id="datawrapper-chart-WFYi7" src="https://datawrapper.dwcdn.net/WFYi7/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="467" data-external="1"></iframe>
                     <script type="text/javascript">(function(){function e(){window.addEventListener(`message`,function(e){if(e.data[`datawrapper-height`]!==void 0){var t=document.querySelectorAll(`iframe`);for(var n in e.data[`datawrapper-height`])for(var r=0,i;i=t[r];r++)if(i.contentWindow===e.source){var a=e.data[`datawrapper-height`][n]+`px`;i.style.height=a}}})}e()})();</script>
                 </div>
             </article>
 
-            <!-- GRÁFICO 2: CONSUMOS PREVENTIVOS VS REACTIVOS (FLOURISH PICTOGRAMA) -->
+            <!-- PREGUNTA 3: CONSUMOS PREVENTIVOS VS REACTIVOS (FLOURISH PICTOGRAMA) -->
             <article class="viz-card">
                 <header class="viz-header">
-                    <h2>2. ¿Cómo se distribuyen mis consumos entre Reactivos y Preventivos?</h2>
+                    <h2>3. ¿Cómo se distribuyen mis consumos entre Reactivos y Preventivos?</h2>
                     <p class="subtitle">Herramienta: Flourish</p>
                 </header>
                 <p class="viz-description">
@@ -226,25 +249,6 @@
                         <script src="https://public.flourish.studio/resources/embed.js"></script>
                         <noscript>
                             <img src="https://public.flourish.studio/visualisation/30083413/thumbnail" width="100%" alt="pictogram visualization" />
-                        </noscript>
-                    </div>
-                </div>
-            </article>
-
-            <!-- GRÁFICO 3: EVOLUCIÓN DE LA FRECUENCIA (FLOURISH) -->
-            <article class="viz-card">
-                <header class="viz-header">
-                    <h2>3. ¿Cómo evolucionó la frecuencia de mis consumos médicos año a año entre 2021 y 2026?</h2>
-                    <p class="subtitle">Herramienta: Flourish</p>
-                </header>
-                <p class="viz-description">
-                    Tendencia general de los eventos de salud registrados a lo largo del tiempo.
-                </p>
-                <div class="chart-container">
-                    <div class="flourish-embed flourish-chart" data-src="visualisation/30082509">
-                        <script src="https://public.flourish.studio/resources/embed.js"></script>
-                        <noscript>
-                            <img src="https://public.flourish.studio/visualisation/30082509/thumbnail" width="100%" alt="chart visualization" />
                         </noscript>
                     </div>
                 </div>
