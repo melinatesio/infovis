@@ -142,7 +142,7 @@
             margin-bottom: 20px;
         }
 
-        /* CONTENEDOR DE GRÁFICOS Y ESTILOS ESPECÍFICOS */
+        /* CONTENEDORES ADAPTATIVOS PARA QUE NO SE CORTEN LOS GRÁFICOS */
         .chart-container {
             width: 100%;
             min-height: 450px;
@@ -151,25 +151,30 @@
             border-radius: 12px;
             padding: 15px;
             position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: block;
+            overflow: visible;
         }
 
-        /* Estilo centrado sin estirar para RAWGraphs */
+        /* Centrado flexible del SVG de RAWGraphs */
         .chart-container object {
             display: block;
             margin: 0 auto;
-            max-width: 100%;
+            width: 100%;
+            max-width: 900px;
             height: auto;
+            min-height: 450px;
         }
 
-        /* Estilos ajustables para iFrames e incrustaciones de Flourish */
-        .chart-container iframe,
+        /* Permitir que Datawrapper y Flourish ajusten su alto de forma libre */
+        .chart-container iframe {
+            width: 100% !important;
+            border: none;
+        }
+
         .chart-container .flourish-embed {
             width: 100% !important;
-            min-height: 450px;
-            border: none;
+            height: auto !important;
+            min-height: 500px;
         }
 
         footer {
@@ -225,7 +230,7 @@
                 <p class="viz-description">
                     Distribución de las atenciones médicas divididas por su origen (Ambulatorio vs. Internación) para identificar el volumen de consultas de rutina frente a estadías de mayor complejidad.
                 </p>
-                <div class="chart-container">
+                <div class="chart-container" style="display: flex; justify-content: center; align-items: center;">
                     <object type="image/svg+xml" data="./ConsumoOrigen.svg"></object>
                 </div>
             </article>
@@ -245,7 +250,7 @@
                 </div>
             </article>
 
-            <!-- PREGUNTA 3: CONSUMOS PREVENTIVOS VS REACTIVOS (FLOURISH PICTOGRAMA ACTUALIZADO) -->
+            <!-- PREGUNTA 3: CONSUMOS PREVENTIVOS VS REACTIVOS (FLOURISH PICTOGRAMA) -->
             <article class="viz-card">
                 <header class="viz-header">
                     <h2>3. ¿Cómo se distribuyen mis consumos entre Reactivos y Preventivos?</h2>
